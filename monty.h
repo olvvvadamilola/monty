@@ -55,8 +55,6 @@ void fn_search(char *opcode, char *val, int line_no, int frmt);
 void fn_call(fn_op f, char *opcode, char *val, int line_no, int frmt);
 
 void stack_print(stack_t **stack, unsigned int line_no);
-void stack_add(stack_t **new_node, __attribute__((unused))unsigned int line_no);
-
-
+void stack_add(stack_t **new_node, __attribute__((unused))unsigned int line_n);
 
 #endif
