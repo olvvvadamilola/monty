@@ -2,7 +2,7 @@
 /**
  * stack_add - add node to stack
  * @new_node: new node
- * @line_no: line number
+ * @line_n: line number
 */
 void stack_add(stack_t **new_node, __attribute__((unused))unsigned int line_n)
 {

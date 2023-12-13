@@ -1,11 +1,14 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <unistd.h>
+#include <stdarg.h>
+
 
 #define DELIM "\n "
 
@@ -36,7 +39,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_no);
 } instruction_t;
 
 extern stack_t *h;
@@ -56,5 +59,17 @@ void fn_call(fn_op f, char *opcode, char *val, int line_no, int frmt);
 
 void stack_print(stack_t **stack, unsigned int line_no);
 void stack_add(stack_t **new_node, __attribute__((unused))unsigned int line_n);
+
+void print_char(stack_t **stack, unsigned int line_number);
+void print_str(stack_t **stack, __attribute__((unused))unsigned int ln);
+void rotl(stack_t **stack, __attribute__((unused))unsigned int ln);
+void rotr(stack_t **stack, __attribute__((unused))unsigned int ln);
+void mul_nodes(stack_t **stack, unsigned int line_number);
+void mod_nodes(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void swap_nodes(stack_t **stack, unsigned int line_number);
+void add_nodes(stack_t **stack, unsigned int line_number);
+void sub_nodes(stack_t **stack, unsigned int line_number);
+void div_nodes(stack_t **stack, unsigned int line_number);
 
 #endif
