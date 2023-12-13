@@ -9,17 +9,17 @@ stack_t *h = NULL;
  */
 stack_t *cr8_node(int n)
 {
-	stack_t *new;
+	stack_t *node;
 
-	new = malloc(sizeof(stack_t));
-	if (new == NULL)
+	node = malloc(sizeof(stack_t));
+	if (node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 	}
-	new->next = NULL;
-	new->prev = NULL;
-	new->n = n;
-	return (new);
+	node->next = NULL;
+	node->prev = NULL;
+	node->n = n;
+	return (node);
 }
 /**
  * free_node - free node

@@ -7,7 +7,7 @@
 #include <ctype.h>
 #include <unistd.h>
 
-extern stack_t *h;
+#define DELIM "\n "
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -39,10 +39,24 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern stack_t *h;
+typedef void (*fn_op)(stack_t **, unsigned int);
+
 /**Nodes*/
 stack_t *cr8_node(int n);
 void free_node(void);
 void Queue(stack_t **new_node, __attribute__((unused))unsigned int line_no);
+
+void F_open(char *file);
+void F_read(FILE *fd);
+int tokenize(char *buffer, int line_number, int frmt);
+
+void fn_search(char *opcode, char *val, int line_no, int frmt);
+void fn_call(fn_op f, char *opcode, char *val, int line_no, int frmt);
+
+void stack_print(stack_t **stack, unsigned int line_no);
+void stack_add(stack_t **new_node, __attribute__((unused))unsigned int line_no);
+
 
 
 #endif
