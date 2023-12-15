@@ -2,7 +2,7 @@
 
 /**
  * err - Prints appropiate error messages determined by their error code.
- * @error_code: The error codes are the following:
+ * @error_msg: The error codes are the following:
  * (1) => The user does not give any file or more than one file to the program.
  * (2) => The file provided is not a file that can be opened or read.
  * (3) => The file provided contains an invalid instruction.
@@ -12,14 +12,14 @@
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  */
-void err(int error_code, ...)
+void err(int error_msg, ...)
 {
 	va_list arg;
 	char *op;
 	int line_n;
 
-	va_start(arg, error_code);
-	switch (error_code)
+	va_start(arg, error_msg);
+	switch (error_msg)
 	{
 		case 1:
 			fprintf(stderr, "USAGE: monty file\n");
@@ -48,18 +48,18 @@ void err(int error_code, ...)
 
 /**
  * stack_err - handles errors.
- * @error_code: The error codes are the following:
+ * @error_msg: The error codes are the following:
  * (6) => When the stack it empty for pint.
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
  * (9) => Division by zero.
  */
-void stack_err(int error_code, ...)
+void stack_err(int error_msg, ...)
 {
 	va_list arg;
 
-	va_start(arg, error_code);
-	switch (error_code)
+	va_start(arg, error_msg);
+	switch (error_msg)
 	{
 		case 6:
 			fprintf(stderr, "L%d: can't pint, stack empty\n",
@@ -78,18 +78,18 @@ void stack_err(int error_code, ...)
 
 /**
  * string_err - handles errors.
- * @error_code: The error codes are the following:
+ * @error_msg: The error codes are the following:
  * (10) ~> The number inside a node is outside ASCII bounds.
  * (11) ~> The stack is empty.
  */
-void string_err(int error_code, ...)
+void string_err(int error_msg, ...)
 {
 	va_list arg;
 	int line_n;
 
-	va_start(arg, error_code);
+	va_start(arg, error_msg);
 	line_n = va_arg(arg, int);
-	switch (error_code)
+	switch (error_msg)
 	{
 		case 10:
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", line_n);
@@ -103,15 +103,18 @@ void string_err(int error_code, ...)
 	free_nodes();
 	exit(EXIT_FAILURE);
 }
-
-void arith_err(int error_code, ...)
+/**
+ * arith_err - handles errors.
+ * @error_msg:
+*/
+void arith_err(int error_msg, ...)
 {
 	va_list arg;
 	char *op;
 	int line_n;
 
-	va_start(arg, error_code);
-	switch (error_code)
+	va_start(arg, error_msg);
+	switch (error_msg)
 	{
 		case 8:
 			line_n = va_arg(arg, unsigned int);
