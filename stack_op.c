@@ -1,16 +1,16 @@
 #include "monty.h"
 
 /**
- * m_mul - Adds the top two elements of the stack.
+ * mul_nodes - Adds the top two elements of the stack.
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @line_number: Interger representing the line number of of the opcode.
  */
-void m_mul(stack_t **stack, unsigned int line_number)
+void mul_nodes(stack_t **stack, unsigned int line_number)
 {
 	int sum;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		Arith_error('mul', line_number);
+		more_err(8, line_number, "mul");
 
 	(*stack) = (*stack)->next;
 	sum = (*stack)->n * (*stack)->prev->n;
@@ -21,21 +21,21 @@ void m_mul(stack_t **stack, unsigned int line_number)
 
 
 /**
- * m_mod - Adds the top two elements of the stack.
+ * mod_nodes - Adds the top two elements of the stack.
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @line_number: Interger representing the line number of of the opcode.
  */
-void m_mod(stack_t **stack, unsigned int line_number)
+void mod_nodes(stack_t **stack, unsigned int line_number)
 {
 	int sum;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 
-		Arith_error('mod', line_number);
+		more_err(8, line_number, "mod");
 
 
 	if ((*stack)->n == 0)
-		Arith_error(9, line_number);
+		more_err(9, line_number);
 	(*stack) = (*stack)->next;
 	sum = (*stack)->n % (*stack)->prev->n;
 	(*stack)->n = sum;
