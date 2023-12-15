@@ -80,6 +80,5 @@ void rotr(stack_t **, unsigned int);
 void err(int error_msg, ...);
 void stack_err(int error_msg, ...);
 void string_err(int error_msg, ...);
-void arith_err(int error_msg, ...);
 
 #endif

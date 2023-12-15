@@ -10,7 +10,7 @@ void m_mul(stack_t **stack, unsigned int line_number)
 	int sum;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		arith_err(8, line_number, "mul");
+		stack_err(8, line_number, "mul");
 
 	(*stack) = (*stack)->next;
 	sum = (*stack)->n * (*stack)->prev->n;
@@ -31,7 +31,7 @@ void m_mod(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 
-		arith_err(8, line_number, "mod");
+		stack_err(8, line_number, "mod");
 
 
 	if ((*stack)->n == 0)
