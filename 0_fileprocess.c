@@ -9,7 +9,7 @@ void f_open(char *fff)
 	FILE *fd = fopen(fff, "r");
 
 	if (fff == NULL || fd == NULL)
-		m_error(2, fff);
+		err(2, fff);
 
 	f_read(fd);
 	fclose(fd);
@@ -46,7 +46,7 @@ int parse_line(char *buffer, int line_number, int frmt)
 	const char *delim = "\n ";
 
 	if (buffer == NULL)
-		m_error(2);
+		err(4);
 
 	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
