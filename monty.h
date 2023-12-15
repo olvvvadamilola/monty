@@ -46,7 +46,7 @@ typedef void (*op_func)(stack_t **, unsigned int);
 void f_open(char *fff);
 int parse_line(char *buffer, int line_number, int frmt);
 void f_read(FILE *);
-int c_len(FILE *);
+int len_chars(FILE *);
 void executef(char *, char *, int, int);
 void invokef(op_func, char *, char *, int, int);
 
