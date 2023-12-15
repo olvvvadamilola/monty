@@ -1,6 +1,5 @@
 #include "monty.h"
 
-
 /**
  * stack_add - Adds a node to the stack.
  * @new_node: Pointer to the new node.
@@ -25,11 +24,11 @@ void stack_add(stack_t **new_node, __attribute__((unused))unsigned int ln)
 
 
 /**
- * stack_print - Adds a node to the stack.
+ * print_stack - Adds a node to the stack.
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @line_number: line number of  the opcode.
  */
-void stack_print(stack_t **stack, unsigned int line_number)
+void print_stack(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 

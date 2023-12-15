@@ -3,11 +3,11 @@
 
 #define _GNU_SOURCE
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include <stdarg.h>
+#include <stdlib.h>
 #include <ctype.h>
+#include <stdarg.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -20,9 +20,9 @@
  */
 typedef struct stack_s
 {
-	int n;
-	struct stack_s *prev;
-	struct stack_s *next;
+        int n;
+        struct stack_s *prev;
+        struct stack_s *next;
 } stack_t;
 
 /**
@@ -35,45 +35,51 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+        char *opcode;
+        void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
 /*file operations*/
-void open_f(char *sourceFile);
-void read_f(FILE *);
-int parse_line(char *cache, int line_number, int frmt);
-void execute(char *, char *, int, int);
-void invoke(op_func, char *, char *, int, int);
+void openF(char *sourceFile);
+void read_F(FILE *);
+int parse_line(char *buffer, int line_number, int format);
+void executef(char *, char *, int, int);
+void invokef(op_func, char *, char *, int, int);
 
-int c_length(FILE *);
+int c_lengths(FILE *);
 
-/*------Stack operations------*/
-stack_t *create_node(int n);
+/*----Stack operations--------*/
+stack_t *node_c(int n);
 void free_nodes(void);
-void stack_print(stack_t **, unsigned int);
+void print_stack(stack_t **, unsigned int);
 void stack_add(stack_t **, unsigned int);
-void queue(stack_t **, unsigned int);
+void queue_add(stack_t **, unsigned int);
 
 void m_pint(stack_t **, unsigned int);
 void m_pop(stack_t **, unsigned int);
-void nop(stack_t **, unsigned int);
 void m_swap(stack_t **, unsigned int);
+void nop(stack_t **, unsigned int);
 
-/*------Arithmetics------*/
-void add_nodes(stack_t **, unsigned int);
-void sub_nodes(stack_t **, unsigned int);
-void div_nodes(stack_t **, unsigned int);
-void mul_nodes(stack_t **, unsigned int);
-void mod_nodes(stack_t **, unsigned int);
+/*---arithmetics----*/
+void m_add(stack_t **, unsigned int);
+void m_sub(stack_t **, unsigned int);
+void m_div(stack_t **, unsigned int);
+void m_mul(stack_t **, unsigned int);
+void m_mod(stack_t **, unsigned int);
 
-/*------String operations----*/
+/*String operations*/
 void print_char(stack_t **, unsigned int);
 void print_str(stack_t **, unsigned int);
 void rotl(stack_t **, unsigned int);
 void rotr(stack_t **, unsigned int);
+
+/*----Error------*/
+void mp_error(int error_msg, ...);
+void Arith_error(int error_msg, ...);
+void pp_error(int error_msg, ...);
+void pchar_err(int error_msg, ...);
 
 #endif

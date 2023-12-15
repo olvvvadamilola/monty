@@ -10,17 +10,11 @@ void print_char(stack_t **stack, unsigned int line_number)
 	int ascii;
 
 	if (stack == NULL || *stack == NULL)
-	{
-		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+		pchar_err(11, line_number);
 
 	ascii = (*stack)->n;
 	if (ascii < 0 || ascii > 127)
-	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+		pchar_err(10, line_number);
 	printf("%c\n", ascii);
 }
 
