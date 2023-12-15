@@ -22,6 +22,10 @@ void m_mul(stack_t **stack, unsigned int line_number)
 
 
 /**
+ * m_mod - divides the top two elements
+ * @stack: The stack
+ * @line_number: The line number
+ * Return: Nothing
  */
 void m_mod(stack_t **stack, unsigned int line_number)
 {

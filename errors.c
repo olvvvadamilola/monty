@@ -3,6 +3,7 @@
 /**
  * err - handles errors.
  * @error_code: The error codes are the following:
+ * (1) => USAGE: monty file
  */
 void err(int error_code, ...)
 {

@@ -21,6 +21,9 @@ int main(int argc, char *argv[])
 }
 
 /**
+ * create_node - creates a new node
+ * @n: The data
+ * Return: The new node
  */
 stack_t *create_node(int n)
 {
@@ -37,6 +40,7 @@ stack_t *create_node(int n)
 
 /**
  * free_nodes - Frees nodes in the stack.
+ * Return: Nothing
  */
 void free_nodes(void)
 {
@@ -55,6 +59,10 @@ void free_nodes(void)
 
 
 /**
+ * stack_queue - adds a new node
+ * @new_node: The new node
+ * @l_n: The line number
+ * Return: Nothing
  */
 void stack_queue(stack_t **new_node, __attribute__((unused))unsigned int l_n)
 {

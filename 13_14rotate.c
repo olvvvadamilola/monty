@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * nop - does nothing
+ * rotl - rotates the stack to top
  * @stack: The stack
  * @l_n: The line number
  * Return: Nothing
@@ -25,7 +25,7 @@ void rotl(stack_t **stack, __attribute__((unused))unsigned int l_n)
 
 
 /**
- * nop - does nothing
+ *  rotr - rotates the stack to bottom
  * @stack: The stack
  * @l_n: The line number
  * Return: Nothing
