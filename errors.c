@@ -2,6 +2,7 @@
 
 /**
  * err - handles errors.
+ * @error_msg: handles errors.
  */
 void err(int error_msg, ...)
 {

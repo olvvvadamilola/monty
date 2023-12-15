@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * string_err - handles errors.
- * 
+ * @error_msg: handles errors.
  */
 void string_err(int error_msg, ...)
 {

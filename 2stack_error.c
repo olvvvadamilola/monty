@@ -1,6 +1,7 @@
 #include "monty.h"
 /**
  * stack_err - handles stack errors.
+ * @error_msg: handles errors.
  */
 void stack_err(int error_msg, ...)
 {
