@@ -1,6 +1,5 @@
 #include "monty.h"
 
-
 /**
  * stack_add - Adds a node to the stack.
  * @new_node: Pointer to the new node.
@@ -22,7 +21,6 @@ void stack_add(stack_t **new_node, __attribute__((unused))unsigned int l_n)
 	head->next = tmp;
 	tmp->prev = head;
 }
-
 
 /**
  * print_stack - Adds a node to the stack.
