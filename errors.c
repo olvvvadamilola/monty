@@ -5,7 +5,7 @@
  * @error_code: error codes
  * Return: Nothing
  */
-void err(int error_code, ...)
+void m_error(int error_code, ...)
 {
 	va_list ag;
 	char *op;

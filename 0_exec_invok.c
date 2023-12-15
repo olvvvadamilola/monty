@@ -42,7 +42,7 @@ void executef(char *opcode, char *value, int l_n, int frmt)
 		}
 	}
 	if (tag == 1)
-		err(3, l_n, opcode);
+		m_error(2, l_n, opcode);
 }
 
 
@@ -70,11 +70,11 @@ void invokef(op_func func, char *op, char *val, int l_n, int frmt)
 			tag = -1;
 		}
 		if (val == NULL)
-			err(5, l_n);
+			m_error(2, l_n);
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i]) == 0)
-				err(5, l_n);
+				m_error(2, l_n);
 		}
 		node = create_node(atoi(val) * tag);
 		if (frmt == 0)
