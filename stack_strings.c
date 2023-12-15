@@ -7,20 +7,15 @@
  */
 void p_char(stack_t **stack, unsigned int line_number)
 {
-	int value;
+	int ascii;
 
 	if (stack == NULL || *stack == NULL)
 		string_err(11, line_number);
 
-	if (value >= 0 && value <= 127)
-	{
-		printf("%c\n", (char)value);
-	}
-	else
-	{
+	ascii = (*stack)->n;
+	if (ascii < 0 || ascii > 127)
 		string_err(10, line_number);
-	}
-	printf("%c\n", value);
+	printf("%c\n", ascii);
 }
 
 /**
