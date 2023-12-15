@@ -1,9 +1,10 @@
 #include "monty.h"
 /**
- * m_pop - Adds a node to the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
- */
+ * m_pop - Removes the top element of the stack.
+ * @stack: The stack
+ * @line_number: The line number
+ * Return: Nothing
+*/
 void m_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
@@ -19,10 +20,11 @@ void m_pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * m_pint - Prints the top node of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
- */
+ * m_pint - Prints the value at the top of the stack.
+ * @stack: The stack
+ * @line_number: The line number
+ * Return: Nothing
+*/
 void m_pint(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)

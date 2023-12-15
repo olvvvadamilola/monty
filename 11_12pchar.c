@@ -1,9 +1,10 @@
 #include "monty.h"
 
 /**
- * p_char - Prints the Ascii value.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * p_char - prints char
+ * @stack: The stack
+ * @line_number: The line number
+ * Return: Nothing
  */
 void p_char(stack_t **stack, unsigned int line_number)
 {
@@ -19,9 +20,10 @@ void p_char(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * p_str - Prints a string.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @l_n: Interger representing the line number of of the opcode.
+ * p_str - prints string
+ * @stack: The stack
+ * @l_n: The line number
+ * Return: Nothing
  */
 void p_str(stack_t **stack, __attribute__((unused))unsigned int l_n)
 {

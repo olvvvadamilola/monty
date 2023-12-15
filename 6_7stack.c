@@ -1,8 +1,9 @@
 #include "monty.h"
 /**
- * m_sub - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * m_sub - subtracts the top two elements
+ * @stack: The stack
+ * @line_number: The line number
+ * Return: Nothing
  */
 void m_sub(stack_t **stack, unsigned int line_number)
 {
@@ -22,9 +23,10 @@ void m_sub(stack_t **stack, unsigned int line_number)
 
 
 /**
- * m_div - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * m_div - divides the top two elements
+ * @stack: The stack
+ * @line_number: The line number
+ * Return: Nothing
  */
 void m_div(stack_t **stack, unsigned int line_number)
 {

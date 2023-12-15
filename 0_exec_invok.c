@@ -5,7 +5,7 @@
  * @value: value
  * @l_n: line number
  * @frmt: 0 into stack, 1 into queue
- */
+*/
 void executef(char *opcode, char *value, int l_n, int frmt)
 {
 	int i;
@@ -59,7 +59,7 @@ void invokef(op_func func, char *op, char *val, int l_n, int frmt)
 {
 	stack_t *node;
 	int tag;
-	int i = 0;
+	int i;
 
 	tag = 1;
 	if (strcmp(op, "push") == 0)
@@ -71,13 +71,10 @@ void invokef(op_func func, char *op, char *val, int l_n, int frmt)
 		}
 		if (val == NULL)
 			err(5, l_n);
-		while (val[i] != '\0')
+		for (i = 0; val[i] != '\0'; i++)
 		{
-			if (!isdigit(val[i]))
-			{
+			if (isdigit(val[i]) == 0)
 				err(5, l_n);
-			}
-			i++;
 		}
 		node = create_node(atoi(val) * tag);
 		if (frmt == 0)
