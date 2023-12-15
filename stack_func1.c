@@ -4,9 +4,9 @@
 /**
  * stack_add - Adds a node to the stack.
  * @new_node: Pointer to the new node.
- * @ln: Interger representing the line number of of the opcode.
+ * @l_n: Interger representing the line number of of the opcode.
  */
-void stack_add(stack_t **new_node, __attribute__((unused))unsigned int ln)
+void stack_add(stack_t **new_node, __attribute__((unused))unsigned int l_n)
 {
 	stack_t *tmp;
 

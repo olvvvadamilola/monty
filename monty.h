@@ -43,8 +43,8 @@ extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
 /*file operations*/
-void f_open(char *file_name);
-int parse_line(char *buffer, int line_number, int format);
+void f_open(char *fff);
+int parse_line(char *buffer, int line_number, int frmt);
 void f_read(FILE *);
 int len_chars(FILE *);
 void executef(char *, char *, int, int);

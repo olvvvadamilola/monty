@@ -21,9 +21,9 @@ void p_char(stack_t **stack, unsigned int line_number)
 /**
  * p_str - Prints a string.
  * @stack: Pointer to a pointer pointing to top node of the stack.
- * @ln: Interger representing the line number of of the opcode.
+ * @l_n: Interger representing the line number of of the opcode.
  */
-void p_str(stack_t **stack, __attribute__((unused))unsigned int ln)
+void p_str(stack_t **stack, __attribute__((unused))unsigned int l_n)
 {
 	int ascii;
 	stack_t *tmp;

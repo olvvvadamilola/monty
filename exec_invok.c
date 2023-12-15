@@ -3,15 +3,15 @@
  * executef - executes the opcode
  * @opcode: opcode
  * @value: value
- * @ln: line number
- * @format: 0 into stack, 1 into queue
+ * @l_n: line number
+ * @frmt: 0 into stack, 1 into queue
 */
-void executef(char *opcode, char *value, int ln, int format)
+void executef(char *opcode, char *value, int l_n, int frmt)
 {
 	int i;
 	int tag;
 
-	instruction_t func_list[] = {
+	instruction_t f_list[] = {
 		{"push", stack_add},
 		{"pall", print_stack},
 		{"pint", m_pint},
@@ -33,29 +33,29 @@ void executef(char *opcode, char *value, int ln, int format)
 	if (opcode[0] == '#')
 		return;
 
-	for (tag = 1, i = 0; func_list[i].opcode != NULL; i++)
+	for (tag = 1, i = 0; f_list[i].opcode != NULL; i++)
 	{
-		if (strcmp(opcode, func_list[i].opcode) == 0)
+		if (strcmp(opcode, f_list[i].opcode) == 0)
 		{
-			invokef(func_list[i].f, opcode, value, ln, format);
+			invokef(f_list[i].f, opcode, value, l_n, frmt);
 			tag = 0;
 		}
 	}
 	if (tag == 1)
-		err(3, ln, opcode);
+		err(3, l_n, opcode);
 }
 
 
 /**
- * invokef - Calls the required function.
- * @func: Pointer to the function that is about to be called.
- * @op: string representing the opcode.
- * @val: string representing a numeric value.
- * @ln: line numeber for the instruction.
- * @format: Format specifier. If 0 Nodes will be entered as a stack.
- * if 1 nodes will be entered as a queue.
+ * invokef - invokes the opcode
+ * @func: opcode
+ * @op: opcode
+ * @val: value
+ * @l_n: line number
+ * @frmt: 0 into stack, 1 into queue
+ * Return: void
  */
-void invokef(op_func func, char *op, char *val, int ln, int format)
+void invokef(op_func func, char *op, char *val, int l_n, int frmt)
 {
 	stack_t *node;
 	int tag;
@@ -70,18 +70,18 @@ void invokef(op_func func, char *op, char *val, int ln, int format)
 			tag = -1;
 		}
 		if (val == NULL)
-			err(5, ln);
+			err(5, l_n);
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i]) == 0)
-				err(5, ln);
+				err(5, l_n);
 		}
 		node = create_node(atoi(val) * tag);
-		if (format == 0)
-			func(&node, ln);
-		if (format == 1)
-			stack_queue(&node, ln);
+		if (frmt == 0)
+			func(&node, l_n);
+		if (frmt == 1)
+			stack_queue(&node, l_n);
 	}
 	else
-		func(&head, ln);
+		func(&head, l_n);
 }
