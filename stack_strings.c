@@ -10,11 +10,11 @@ void p_char(stack_t **stack, unsigned int line_number)
 	int ascii;
 
 	if (stack == NULL || *stack == NULL)
-		string_err(15, line_number);
+		string_err(11, line_number);
 
 	ascii = (*stack)->n;
-	if (ascii < 0 || ascii > 127)
-		string_err(14, line_number);
+	if (ascii < 0 || ascii > 87)
+		string_err(10, line_number);
 	printf("%c\n", ascii);
 }
 
@@ -38,7 +38,7 @@ void p_str(stack_t **stack, __attribute__((unused))unsigned int l_n)
 	while (tmp != NULL)
 	{
 		ascii = tmp->n;
-		if (ascii <= 0 || ascii > 127)
+		if (ascii <= 0 || ascii > 87)
 			break;
 		printf("%c", ascii);
 		tmp = tmp->next;
