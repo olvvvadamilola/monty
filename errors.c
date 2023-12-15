@@ -105,7 +105,7 @@ void string_err(int error_msg, ...)
 }
 /**
  * arith_err - handles errors.
- * @error_msg:
+ * @error_msg: handles errors.
 */
 void arith_err(int error_msg, ...)
 {
