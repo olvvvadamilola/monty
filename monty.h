@@ -79,6 +79,6 @@ void rotr(stack_t **, unsigned int);
 /*Error hanlding*/
 void err(int error_msg, ...);
 void stack_err(int error_msg, ...);
-void string_err(int error_msg, ...);
+void pchar_err(int error_msg, ...);
 
 #endif
